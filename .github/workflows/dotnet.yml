@@ -1,5 +1,9 @@
 name: .NET
 
+defaults:
+  run:
+    working-directory:  ./ConsoleApp1
+
 on:
   push:
     branches: [ main ]
@@ -10,7 +14,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
@@ -18,8 +22,9 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore /ConsoleApp1
+      run: dotnet restore
     - name: Build
-      run: dotnet build --no-restore /ConsoleApp1
+      run: dotnet build --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal /ConsoleApp1
+      run: dotnet test --no-build --verbosity normal
+      
