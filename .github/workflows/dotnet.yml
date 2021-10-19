@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore /ConsoleApp1/ConsoleApp1.sln
+      run: dotnet restore /ConsoleApp1
     - name: Build
-      run: dotnet build --no-restore /ConsoleApp1/ConsoleApp1.sln
+      run: dotnet build --no-restore /ConsoleApp1
     - name: Test
-      run: dotnet test --no-build --verbosity normal /ConsoleApp1/ConsoleApp1.sln
+      run: dotnet test --no-build --verbosity normal /ConsoleApp1
