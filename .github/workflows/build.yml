@@ -43,6 +43,6 @@ jobs:
         shell: powershell
         run: |
           cd ConsoleApp1
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"rievers_test" /o:"rievers" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
+          ..\.sonar\scanner\dotnet-sonarscanner begin /k:"rievers_test" /o:"rievers" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build --no-restore
-          .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
+          ..\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"
