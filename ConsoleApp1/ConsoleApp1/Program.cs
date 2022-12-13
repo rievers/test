@@ -7,6 +7,10 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+            
+            var s = "SELECT * FROM {0}";
+            var x = Console.ReadLine();
+            Console.WriteLine(String.Format(s, x));
         }
     }
 }
